@@ -1,1 +1,1 @@
-# blog for fairwinds 
+# blog for fairwinds
