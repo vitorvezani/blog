@@ -1,6 +1,6 @@
 options:
   organization: acme-co
-  hostname: https://be-vv-fwi-694-cre.k8s.insights.fairwinds.com
+  hostname: https://be-vv-fwi-1233-cr.k8s.insights.fairwinds.com
 
   # You may need to set this to 'main'
   baseBranch: main
@@ -9,14 +9,3 @@ options:
 images:
   docker:
   - nginx:1.18-alpine
-
-# These manifests will be scanned for configuration issues.
-manifests:
-  yaml:
-  - ./deploy/manifests/
-  - ./main.deployment.yaml
-  helm:
-  - name: prod
-    path: ./deploy/chart
-    values:
-      foo: bar
