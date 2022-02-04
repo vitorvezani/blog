@@ -1,7 +1,7 @@
 options:
   organization: acme-co
   baseBranch: main
-  repository: vitorvezani/blog
+  repositoryName: vitorvezani/blog
   hostname: https://be-vv-fwi-1233-cr.k8s.insights.fairwinds.com/
   
 # These images will be scanned for vulnerabilities.
