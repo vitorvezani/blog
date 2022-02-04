@@ -1,6 +1,4 @@
 options:
-  organization: acme-co
-  hostname: https://be-vv-fwi-1233-cr.k8s.insights.fairwinds.com
   baseBranch: main
 
 # These images will be scanned for vulnerabilities.
