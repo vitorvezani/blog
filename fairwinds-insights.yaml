@@ -1,0 +1,24 @@
+options:
+  organization: acme-co
+  baseBranch: main
+  repository: vitorvezani/blog
+
+# These images will be scanned for vulnerabilities.
+images:
+  docker:
+  - nginx:1.18-alpine
+
+manifests:
+  yaml:
+    - ./failing.yaml
+    - ./passing.yaml
+  helm:
+    - name: staging
+      path: ./chart/
+      variableFile: ./chart/values.yaml
+exemptions:
+  - filename: failing.yaml
+    report: polaris
+    checks:
+    - notReadOnlyRootFilesystem
+  - report: trivy
