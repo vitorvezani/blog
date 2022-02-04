@@ -2,24 +2,25 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
+# Define a job to be invoked later in a workflow.
+# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  build:
+  say-hello:
+    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
+    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
       - image: cimg/base:stable
+    # Add steps to the job
+    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
-      - setup_remote_docker
       - run:
-          name: Insights CI
-          command: |
-            curl -L https://be-vv-fwi-1233-cr.k8s.insights.fairwinds.com/v0/insights-ci-0.6.1.sh > insights-ci.sh
-            echo "1c032ad6a9e70e58eb05ccdfbe17015e71d0c1f741aeecdd7548d7a6501c8175 *insights-ci.sh" | shasum -a 256 --check
-            chmod +x insights-ci.sh
-            ./insights-ci.sh
+          name: "Say hello"
+          command: "echo Hello, World!"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  build-workflow:
+  say-hello-workflow:
     jobs:
-      - build
+      - say-hello
