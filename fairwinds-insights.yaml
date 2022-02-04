@@ -17,9 +17,3 @@ manifests:
     - name: staging
       path: ./chart/
       variableFile: ./chart/values.yaml
-exemptions:
-  - filename: failing.yaml
-    report: polaris
-    checks:
-    - notReadOnlyRootFilesystem
-  - report: trivy
