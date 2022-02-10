@@ -1,3 +1,6 @@
+options:
+  setExitCode: true
+
 # These images will be scanned for vulnerabilities.
 images:
   docker:
