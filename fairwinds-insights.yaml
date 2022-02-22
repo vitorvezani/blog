@@ -1,3 +1,9 @@
+options:
+  organization: acme-co
+  baseBranch: main
+  repositoryName: vitorvezani/blog
+  hostname: https://be-main.k8s.insights.fairwinds.com
+
 # These images will be scanned for vulnerabilities.
 images:
   docker:
