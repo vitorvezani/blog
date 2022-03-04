@@ -5,6 +5,7 @@ images:
 
 manifests:
   yaml:
+    - ./failing.yaml
     - ./passing.yaml
   helm:
     # List out any helm charts to template and check
