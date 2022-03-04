@@ -5,10 +5,14 @@ images:
 
 manifests:
   yaml:
-    - ./failing.yaml
     - ./passing.yaml
   helm:
     # List out any helm charts to template and check
     - name: staging
       path: ./chart/
       valuesFile: ./chart/values.yaml
+    - name: nginx-remote
+      chart: nginx-ingress
+      repo: https://helm.nginx.com/stable
+      values:
+        foo: bar
