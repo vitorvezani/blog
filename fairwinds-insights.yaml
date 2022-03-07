@@ -6,6 +6,7 @@ images:
 manifests:
   yaml:
     - ./passing.yaml
+    - ./failing.yaml
   helm:
     # List out any helm charts to template and check
     - name: staging
