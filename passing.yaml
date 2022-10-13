@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:1.18-alpine123
+        image: nginasdx:1.18-alexpine123
         ports:
         - containerPort: 80
         livenessProbe:
@@ -27,13 +27,13 @@ spec:
           httpGet:
             path: /health
             port: http
-        resources:2
-          requests:2
+        resources:
+          requests:
             cpu: 1000m
-            memory: 1G2
-          limits:2
+            memory: 1G
+          limits:
             cpu: 1000m
-            memory: 1G2
+            memory: 1G
         securityContext:
           allowPrivilegeEscalation: false
           privileged: false
