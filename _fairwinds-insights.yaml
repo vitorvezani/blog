@@ -6,5 +6,5 @@ images:
 manifests:
   yaml:
     - ./passing.yaml
-    - ./failing2.yaml
+    - ./failing.yaml
     - ./hello-kubernetes.yaml
