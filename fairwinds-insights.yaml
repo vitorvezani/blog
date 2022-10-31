@@ -4,7 +4,7 @@ options:
   hostname: https://staging.insights.fairwinds.com
   organization: acme-co
   repositoryName: vitorvezani/blog2
-  setExitCode: true
+  setExitCode: false
 
 images:
   docker:
