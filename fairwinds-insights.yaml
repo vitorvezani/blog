@@ -1,4 +1,11 @@
 # These images will be scanned for vulnerabilities.
+options:
+  baseBranch: origin/main
+  hostname: https://staging.insights.fairwinds.com
+  organization: acme-co
+  repositoryName: vitorvezani/blog2
+  setExitCode: false
+
 images:
   docker:
   - nginx:1.18-alpine
