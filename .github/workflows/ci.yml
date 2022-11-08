@@ -33,7 +33,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Fairwinds Insights
         run: |
-          curl -L https://insights.fairwinds.com/v0/insights-ci-2.0.0.sh > insights-ci.sh
-          echo "0ee9fd3c580cd008e493568f05607ff32d8866fec53ecd08a0320f86de481317 *insights-ci.sh" | shasum -a 256 --check
+          curl -L https://staging.insights.fairwinds.com/v0/insights-ci-2.1.0.sh > insights-ci.sh
+          echo "c7f9e6d6120998ea517419ce4e3de7039af3991ccb3392271dd91754b300d5e2 *insights-ci.sh" | shasum -a 256 --check
           chmod +x insights-ci.sh
-          image_version=2.1.5 ./insights-ci.sh
+          ./insights-ci.sh
