@@ -3,6 +3,9 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+variables:
+  Agent.Source.Git.ShallowFetchDepth: 0
+
 trigger:
 - main
 
@@ -10,9 +13,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-# - checkout: self
-#   fetchDepth: "1"
-#   clean: "true"
 - task: Bash@3
   inputs:
     targetType: 'inline'
