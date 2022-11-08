@@ -3,8 +3,8 @@ options:
   baseBranch: origin/main
   hostname: https://staging.insights.fairwinds.com
   organization: acme-co
-  repositoryName: vitorvezani/blog2
-  setExitCode: false
+  repositoryName: vitorvezani/blog
+  setExitCode: true
 
 images:
   docker:
