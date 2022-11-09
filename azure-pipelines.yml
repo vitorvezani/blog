@@ -13,9 +13,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-# - checkout: self
-#   fetchDepth: "1"
-#   clean: "true"
 - task: Bash@3
   inputs:
     targetType: 'inline'
