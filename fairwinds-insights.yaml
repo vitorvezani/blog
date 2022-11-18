@@ -8,7 +8,7 @@ options:
 
 images:
   docker:
-  - nginx:1.18-alpine
+  - nginx:1.23.2-alpine
 
 manifests:
   yaml:
