@@ -9,6 +9,7 @@ options:
 images:
   docker:
   - nginx:1.18-alpine
+  - postgres:15.1-bullseye
 
 manifests:
   yaml:
