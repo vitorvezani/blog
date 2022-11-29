@@ -6,10 +6,10 @@ options:
   repositoryName: vitorvezani/blog
   setExitCode: true
 
-images:
-  docker:
-  - vitorvezani/insights-ci:latest # private on docker.io
-  - quay.io/reactiveops/fairwinds-insights-api:build_116756 # private on quay.io
+#images:
+#  docker:
+#  - vitorvezani/insights-ci:latest # private on docker.io
+# - quay.io/reactiveops/fairwinds-insights-api:build_116756 # private on quay.io
 
 manifests:
   yaml:
