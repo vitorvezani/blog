@@ -8,8 +8,8 @@ options:
 
 images:
   docker:
-    # - vitorvezani/insights-ci:latest # private on docker.io
-    # - quay.io/reactiveops/fairwinds-insights-api:build_116756 # private on quay.io
+    - vitorvezani/insights-ci:latest # private on docker.io
+    - quay.io/reactiveops/fairwinds-insights-api:build_116756 # private on quay.io
 
 manifests:
   yaml:
