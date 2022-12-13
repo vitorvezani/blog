@@ -1,0 +1,19 @@
+# These images will be scanned for vulnerabilities.
+options:
+  baseBranch: main
+  hostname: https://be-main.k8s.insights.fairwinds.com
+  organization: acme-co
+  repositoryName: vitorvezani/blog
+  setExitCode: true
+
+images:
+  docker:
+    - quay.io/fairwinds/polaris:7.2
+    #- vitorvezani/insights-ci:latest # private on docker.io
+    #- quay.io/reactiveops/fairwinds-insights-api:build_116756 # private on quay.io
+
+manifests:
+  yaml:
+    - ./passing.yaml
+    - ./failing.yaml
+    - ./hello-kubernetes.yaml
