@@ -8,7 +8,7 @@
 
 images:
   docker:
-    - quay.io/fairwinds/polaris:7.2
+    - quay.io/fairwinds/polaris:6.0
     #- vitorvezani/insights-ci:latest # private on docker.io
     #- quay.io/reactiveops/fairwinds-insights-api:build_116756 # private on quay.io
 
