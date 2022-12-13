@@ -12,8 +12,8 @@ images:
     #- vitorvezani/insights-ci:latest # private on docker.io
     #- quay.io/reactiveops/fairwinds-insights-api:build_116756 # private on quay.io
 
-manifests:
-  yaml:
-    - ./passing.yaml
-    - ./failing.yaml
-    - ./hello-kubernetes.yaml
+#manifests:
+#  yaml:
+#    - ./passing.yaml
+#    - ./failing.yaml
+#    - ./hello-kubernetes.yaml
