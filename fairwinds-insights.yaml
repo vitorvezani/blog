@@ -1,10 +1,10 @@
 # These images will be scanned for vulnerabilities.
-options:
-  baseBranch: main
-  hostname: https://be-main.k8s.insights.fairwinds.com
-  organization: acme-co
-  repositoryName: vitorvezani/blog
-  setExitCode: true
+#options:
+#  baseBranch: main
+#  hostname: https://be-main.k8s.insights.fairwinds.com
+#  organization: acme-co
+#  repositoryName: vitorvezani/blog
+#  setExitCode: true
 
 images:
   docker:
