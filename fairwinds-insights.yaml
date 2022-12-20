@@ -18,7 +18,7 @@ manifests:
     path: ./chart/flask-hello-world
     values:
       image:
-        tag: $IMAGE_TAG
+        tag: 1.1.0
 #  yaml:
 #    - ./passing.yaml
 #    - ./failing.yaml
