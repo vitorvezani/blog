@@ -6,9 +6,9 @@ options:
  repositoryName: vitorvezani/blog
  setExitCode: true
 
-images:
-  docker:
-    - quay.io/fairwinds/polaris:6.0
+#images:
+  #docker:
+    #- quay.io/fairwinds/polaris:6.0
     #- vitorvezani/insights-ci:latest # private on docker.io
     #- quay.io/reactiveops/fairwinds-insights-api:build_116756 # private on quay.io
 
@@ -16,7 +16,9 @@ manifests:
   helm:
   - name: flask-hello-world
     path: ./chart/flask-hello-world
-    valuesFile: ./chart/flask-hello-world/values.yaml
+    values:
+      image:
+        tag: 75d70c372cfe15b977d5505b1019aa6b752c58eb
 #  yaml:
 #    - ./passing.yaml
 #    - ./failing.yaml
