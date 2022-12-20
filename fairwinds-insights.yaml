@@ -16,9 +16,7 @@ manifests:
   helm:
   - name: flask-hello-world
     path: ./chart/flask-hello-world
-    values:
-      image:
-        tag: 1.1.0
+    valuesFile: ./chart/flask-hello-world/values.yaml
 #  yaml:
 #    - ./passing.yaml
 #    - ./failing.yaml
