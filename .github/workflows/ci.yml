@@ -20,4 +20,4 @@ jobs:
           curl -L https://staging.insights.fairwinds.com/v0/insights-ci-2.2.0.sh > insights-ci.sh
           echo "1632dca8b4dc043d2a62b1c37fd7a8ac034cb22b359c7119e5c11db9515180b2 *insights-ci.sh" | shasum -a 256 --check
           chmod +x insights-ci.sh
-          image_version=vv-fix-path-gh-FWI-3225 ./insights-ci.sh
+          image_version=vv-fix-path-gh-FWI-3225 LOGRUS_LEVEL=debug ./insights-ci.sh
