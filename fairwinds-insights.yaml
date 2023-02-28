@@ -12,13 +12,6 @@ images:
     #- vitorvezani/insights-ci:latest # private on docker.io
     #- quay.io/reactiveops/fairwinds-insights-api:build_116756 # private on quay.io
 
-manifests:
-  helm:
-  - name: flask-hello-world
-    path: ./chart/flask-hello-world
-    values:
-      image:
-        tag: $IMAGE_TAG
 yaml:
   - ./passing.yaml
   - ./failing.yaml
