@@ -1,0 +1,20 @@
+options:
+  organization: acme-co
+  hostname: https://be-vv-automa.k8s.insights.fairwinds.com
+
+  # You may need to set this to 'main'
+  baseBranch: main
+
+# These manifests will be scanned for configuration issues
+manifests:
+  yaml:
+    - ./passing.yaml
+    - ./failing.yaml
+    - ./hello-kubernetes.yaml
+    - ./automountServiceAccountToken/failure.all_true.yaml
+    - ./automountServiceAccountToken/failure.pod_true_serviceaccount_false.yaml
+    - ./automountServiceAccountToken/failure.uses_defaults.yaml
+    - ./automountServiceAccountToken/success.pod.yaml
+    - ./automountServiceAccountToken/success.pod_and_serviceaccount.yaml
+    - ./automountServiceAccountToken/success.pod_false_serviceaccount_true.yaml
+    - ./automountServiceAccountToken/success.serviceaccount.yaml
