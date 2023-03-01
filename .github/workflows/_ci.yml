@@ -17,7 +17,7 @@ jobs:
           fetch-depth: 0
       - name: Fairwinds Insights
         run: |
-          curl -L https://staging.insights.fairwinds.com/v0/insights-ci-2.2.0.sh > insights-ci.sh
-          echo "1632dca8b4dc043d2a62b1c37fd7a8ac034cb22b359c7119e5c11db9515180b2 *insights-ci.sh" | shasum -a 256 --check
+          curl -L https://be-vv-automa.k8s.insights.fairwinds.com/v0/insights-ci-4.2.0.sh > insights-ci.sh
+          echo "99662f37b973016854cb125f0b8733defd00288fe7f1a6a6477fa3875aec512a *insights-ci.sh" | shasum -a 256 --check
           chmod +x insights-ci.sh
           ./insights-ci.sh
