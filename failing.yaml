@@ -5,7 +5,7 @@ metadata:
   labels:
     app: nginx
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: nginx
@@ -15,15 +15,15 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        image: alpine:3.13.0
-        ports:
-        - containerPort: 80
-        securityContext:
-          allowPrivilegeEscalation: true
-          privileged: true
-          readOnlyRootFilesystem: true
-          runAsNonRoot: false
-          capabilities:
-            add:
-              - ALL
+        - name: nginx
+          image: alpine:3.13.0
+          ports:
+            - containerPort: 80
+          securityContext:
+            allowPrivilegeEscalation: true
+            privileged: true
+            readOnlyRootFilesystem: true
+            runAsNonRoot: false
+            capabilities:
+              add:
+                - ALL
