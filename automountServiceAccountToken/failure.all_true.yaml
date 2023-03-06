@@ -13,9 +13,9 @@ spec:
     - containerPort: 80
     resources:
       limits:
-        cpu: 100m # TODO: Set this to the maximum amount of CPU you want your workload to use
+        cpu: 100m
       requests:
-        cpu: 100m # TODO: Set this to the amount of CPU you want to reserve for your workload
+        cpu: 100m
 ---
 apiVersion: v1
 kind: ServiceAccount
