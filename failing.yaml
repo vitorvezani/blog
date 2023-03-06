@@ -20,10 +20,10 @@ spec:
         ports:
         - containerPort: 80
         resources:
-        limits:
-          cpu: 100m
-        requests:
-          cpu: 100m
+          limits:
+            cpu: 100m
+          requests:
+            cpu: 100m
         securityContext:
           allowPrivilegeEscalation: true
           privileged: true
