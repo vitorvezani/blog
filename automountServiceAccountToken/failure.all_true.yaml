@@ -11,6 +11,11 @@ spec:
     image: nginx
     ports:
     - containerPort: 80
+    resources:
+      limits:
+        cpu: 100m
+      requests:
+        cpu: 100m
 ---
 apiVersion: v1
 kind: ServiceAccount
