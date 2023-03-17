@@ -28,5 +28,14 @@ spec:
           resources:
             limits:
               cpu: 100m # TODO: Set this to the maximum amount of CPU you want your workload to use
+              memory: 512Mi # TODO: Set this to the maximum amount of memory you want your workload to use
             requests:
               cpu: 100m # TODO: Set this to the amount of CPU you want to reserve for your workload
+          livenessProbe:
+            # TODO: Change the livenessProbe setting to reflect your application's health
+            exec:
+              command:
+                - cat
+                - /tmp/healthy
+            initialDelaySeconds: 5
+            periodSeconds: 5
