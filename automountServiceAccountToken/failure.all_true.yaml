@@ -14,12 +14,34 @@ spec:
       resources:
         limits:
           cpu: 100m # TODO: Set this to the maximum amount of CPU you want your workload to use
+          memory: 512Mi # TODO: Set this to the maximum amount of memory you want your workload to use
         requests:
           cpu: 100m # TODO: Set this to the amount of CPU you want to reserve for your workload
+          memory: 512Mi # TODO: Set this to the amount of Memory you want to reserve for your workload
       securityContext:
         capabilities:
           drop:
             - ALL
+        runAsNonRoot: true
+        readOnlyRootFilesystem: true
+        allowPrivilegeEscalation: false
+      livenessProbe:
+        # TODO: Change the livenessProbe setting to reflect your application's health
+        exec:
+          command:
+            - cat
+            - /tmp/healthy
+        initialDelaySeconds: 5
+        periodSeconds: 5
+      imagePullPolicy: Always
+      readinessProbe:
+        # TODO: Change the readinessProbe setting to reflect your application's readiness to serve traffic
+        exec:
+          command:
+            - cat
+            - /tmp/healthy
+        initialDelaySeconds: 5
+        periodSeconds: 5
 
 ---
 apiVersion: v1
