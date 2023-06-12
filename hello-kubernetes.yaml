@@ -24,3 +24,7 @@ spec:
             limits:
               memory: "8Gi"
               cpu: "500m"
+          securityContext:
+            capabilities:
+              drop:
+                - ALL
