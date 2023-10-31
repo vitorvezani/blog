@@ -4,7 +4,3 @@ manifests:
     - ./failing.yaml
     - ./hello-kubernetes.yaml
     - ./automountServiceAccountToken/failure.all_true.yaml
-
-exemptions:
-  - checks:
-    - right_size_container
