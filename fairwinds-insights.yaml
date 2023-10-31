@@ -5,6 +5,6 @@ manifests:
     - ./hello-kubernetes.yaml
     - ./automountServiceAccountToken/failure.all_true.yaml
 
-reports:
-  goldilocks:
-    enabled: false
+exemptions:
+  - checks:
+    - right_size_container
