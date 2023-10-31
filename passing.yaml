@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: nginx-deployment-req-limits
   labels:
     app: nginx
 spec:
@@ -16,29 +16,13 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:1.18-alpine
+        image: nginx:1.14.2
         ports:
         - containerPort: 80
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: http
-        readinessProbe:
-          httpGet:
-            path: /health
-            port: http
         resources:
           requests:
-            cpu: 1000m
-            memory: 1G
+            memory: "4Gi"   # 4GB of RAM
+            cpu: "2"        # 2 CPU cores
           limits:
-            cpu: 1000m
-            memory: 2G
-        securityContext:
-          allowPrivilegeEscalation: false
-          privileged: false
-          readOnlyRootFilesystem: true
-          runAsNonRoot: true
-          capabilities:
-            drop:
-              - ALL
+            memory: "4Gi"   # 4GB of RAM
+            cpu: "2"        # 2 CPU cores
