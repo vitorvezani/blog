@@ -4,3 +4,7 @@ manifests:
     - ./failing.yaml
     - ./hello-kubernetes.yaml
     - ./automountServiceAccountToken/failure.all_true.yaml
+
+reports:
+  goldilocks:
+    enabled: false
