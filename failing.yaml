@@ -21,12 +21,15 @@ spec:
             - containerPort: 80
           securityContext:
             allowPrivilegeEscalation: true
-            privileged: true
+            privileged: false
             readOnlyRootFilesystem: true
             runAsNonRoot: false
             capabilities: {}
           resources:
             limits:
               cpu: 100m # TODO: Set this to the maximum amount of CPU you want your workload to use
+              memory: 256Mi # TODO: Set this to the maximum amount of memory you want your workload to use
             requests:
               cpu: 100m # TODO: Set this to the amount of CPU you want to reserve for your workload
+              memory: 256Mi # TODO: Set this to the maximum amount of memory you want your workload to use
+
