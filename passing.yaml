@@ -26,3 +26,32 @@ spec:
           limits:
             memory: "4Gi"   # 4GB of RAM
             cpu: "2"        # 2 CPU cores
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment-2
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.13.0
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "4Gi"   # 4GB of RAM
+            cpu: "2"        # 2 CPU cores
+          limits:
+            memory: "4Gi"   # 4GB of RAM
+            cpu: "2"        # 2 CPU cores
