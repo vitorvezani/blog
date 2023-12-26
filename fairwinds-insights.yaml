@@ -1,9 +1,0 @@
-options:
-  organization: acme-co
-  hostname: http://host.docker.internal:3000
-  baseBranch: main
-
-manifests:
-  yaml:
-    - ./passing.yaml
-    - ./failing.yaml
