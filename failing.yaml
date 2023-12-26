@@ -30,3 +30,36 @@ spec:
               cpu: 100m # TODO: Set this to the maximum amount of CPU you want your workload to use
             requests:
               cpu: 100m # TODO: Set this to the amount of CPU you want to reserve for your workload
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testing-temp
+  labels:
+    app: testing-temp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: testing-temp
+  template:
+    metadata:
+      labels:
+        app: testing-temp
+    spec:
+      containers:
+        - name: testing-temp
+          image: quay.io/fairwinds/testing-temp:test-tag
+          ports:
+            - containerPort: 80
+          securityContext:
+            allowPrivilegeEscalation: true
+            privileged: true
+            readOnlyRootFilesystem: true
+            runAsNonRoot: false
+            capabilities: {}
+          resources:
+            limits:
+              cpu: 100m # TODO: Set this to the maximum amount of CPU you want your workload to use
+            requests:
+              cpu: 100m # TODO: Set this to the amount of CPU you want to reserve for your workload
