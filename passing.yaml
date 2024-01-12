@@ -22,7 +22,7 @@ spec:
         resources:
           requests:
             memory: "4Gi"   # 4GB of RAM
-            cpu: "2"        # 2 CPU cores
+            cpu: "3"        # 2 CPU cores
           limits:
             memory: "4Gi"   # 4GB of RAM
-            cpu: "2"        # 2 CPU cores
+            cpu: "3"        # 2 CPU cores
