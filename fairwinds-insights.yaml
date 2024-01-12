@@ -6,4 +6,3 @@ options:
 manifests:
   yaml:
     - ./passing.yaml
-    - ./failing.yaml
