@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docker-willwill-kube-slack-deployment-req-limits
+  labels:
+    app: docker-willwill-kube-slack
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: docker-willwill-kube-slack
+  template:
+    metadata:
+      labels:
+        app: docker-willwill-kube-slack
+    spec:
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: docker-willwill-kube-slack
+      containers:
+      - name: docker-willwill-kube-slack
+        image: docker.io/willwill/kube-slack:v4.2.0
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsUser: 1000
+          runAsGroup: 3000
+          readOnlyRootFilesystem: true
+          privileged: false
+          runAsNonRoot: true
+          capabilities:
+            drop:
+              - ALL
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "4Gi"   # 4GB of RAM
+            cpu: "2"        # 2 CPU cores
+          limits:
+            memory: "4Gi"   # 4GB of RAM
+            cpu: "2"        # 2 CPU cores
+        readinessProbe:
+          exec:
+            command:
+            - cat
+            - /tmp/ready
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        livenessProbe:
+          exec:
+            command:
+            - cat
+            - /tmp/healthy
+          initialDelaySeconds: 5
+          periodSeconds: 10
