@@ -2,7 +2,6 @@ options:
   organization: acme-co
   hostname: https://staging.insights.fairwinds.com
   baseBranch: main
-  repositoryName: demo-meeting-repo
 
 manifests:
   yaml:
