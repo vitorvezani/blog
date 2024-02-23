@@ -1,7 +1,8 @@
 options:
   organization: acme-co
-  hostname: http://host.docker.internal:3000
+  hostname: https://staging.insights.fairwinds.com
   baseBranch: main
+  repositoryName: demo-meeting-repo
 
 manifests:
   yaml:
