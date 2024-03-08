@@ -5,7 +5,7 @@ metadata:
   labels:
     app: nginx
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: nginx
@@ -21,8 +21,8 @@ spec:
         - containerPort: 80
         resources:
           requests:
-            memory: "4Gi"   # 4GB of RAM
-            cpu: "2"        # 2 CPU cores
+            memory: "50Mi"   # 4GB of RAM
+            cpu: "0.1"        # 2 CPU cores
           limits:
             memory: "4Gi"   # 4GB of RAM
             cpu: "2"        # 2 CPU cores
