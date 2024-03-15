@@ -15,14 +15,14 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.14.2
-        ports:
-        - containerPort: 80
-        resources:
-          requests:
-            memory: "50Mi"   # 4GB of RAM
-            cpu: "0.1"        # 2 CPU cores
-          limits:
-            memory: "4Gi"   # 4GB of RAM
-            cpu: "2"        # 2 CPU cores
+        - name: nginx
+          image: nginx:1.14.2
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: 16Mi # 4GB of RAM
+              cpu: "0.1" # 2 CPU cores
+            limits:
+              memory: 16Mi # 4GB of RAM
+              cpu: "2" # 2 CPU cores
