@@ -1,6 +1,6 @@
 options:
   organization: acme-co
-  hostname: http://localhost:3001
+  hostname: http://host.docker.internal:3000
 
   # You may need to set this to 'main'
   baseBranch: main
