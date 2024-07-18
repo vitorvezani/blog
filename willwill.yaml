@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: willwill-kube-slack-deployment-req-limits
-  labels:
-    app: willwill-kube-slack
+  namespace: default
+  labels: {}
 spec:
   replicas: 3
   selector:
