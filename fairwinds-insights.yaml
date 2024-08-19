@@ -2,9 +2,3 @@ manifests:
   yaml:
     - ./passing.yaml
     - ./failing.yaml
-    - ./dockerwillwill.yaml
-    - ./willwill.yaml
-
-reports:
-  trivy:
-    enabled: false
