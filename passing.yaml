@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment-req-limits
+  name: nginx
   labels:
     app: nginx
 spec:
@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx@sha256:295c7be079025306c4f1d65997fcf7adb411c88f139ad1d34b537164aa060369
+        image: nginx:1.14.2
         ports:
         - containerPort: 80

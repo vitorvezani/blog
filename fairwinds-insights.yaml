@@ -1,6 +1,6 @@
 options:
   organization: acme-co
-  hostname: https://staging.insights.fairwinds.com
+  hostname: http://host.docker.internal:3000
 
   # You may need to set this to 'main'
   baseBranch: main
