@@ -1,6 +1,6 @@
 options:
   organization: acme-co
-  hostname: http://host.docker.internal:3000
+  hostname: https://be-create-se.k8s.insights.fairwinds.com
 
   # You may need to set this to 'main'
   baseBranch: main
