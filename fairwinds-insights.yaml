@@ -1,0 +1,8 @@
+manifests:
+  yaml:
+    - ./passing.yaml
+    - ./failing.yaml
+
+reports:
+  trivy:
+    enabled: false
