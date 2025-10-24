@@ -14,7 +14,13 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.14.2
-        ports:
-        - containerPort: 80
+        - name: nginx
+          image: nginx:1.14.2
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: 100m # TODO: Set this to the maximum amount of CPU you want your workload to use
+            requests:
+              cpu: 100m # TODO: Set this to the amount of CPU you want to reserve for your workload
+  replicas: 3
