@@ -2,6 +2,7 @@ manifests:
   yaml:
     - ./passing.yaml
     - ./failing.yaml
+    - ./failing_opa.yaml
 
 reports:
   trivy:
