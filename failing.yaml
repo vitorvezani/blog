@@ -14,22 +14,45 @@ spec:
       labels:
         app: nginx-deployment-0
     spec:
+      automountServiceAccountToken: false
+      priorityClassName: high-priority
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: nginx-deployment-0
       containers:
         - name: nginx-deployment-0
           image: nginx:1.27.0
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
           securityContext:
-            allowPrivilegeEscalation: true
+            allowPrivilegeEscalation: false
             privileged: false
             readOnlyRootFilesystem: true
-            runAsNonRoot: false
-            capabilities: {}
+            runAsNonRoot: true
+            runAsUser: 1000
+            capabilities:
+              drop:
+                - ALL
           resources:
             limits:
               cpu: 100m # TODO: Set this to the maximum amount of CPU you want your workload to use
+              memory: 256Mi
             requests:
               cpu: 100m # TODO: Set this to the amount of CPU you want to reserve for your workload
+              memory: 128Mi
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -47,19 +70,42 @@ spec:
       labels:
         app: nginx-deployment-1
     spec:
+      automountServiceAccountToken: false
+      priorityClassName: high-priority
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: nginx-deployment-1
       containers:
         - name: nginx-deployment-1
           image: nginx:1.27.0
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
           securityContext:
-            allowPrivilegeEscalation: true
+            allowPrivilegeEscalation: false
             privileged: false
             readOnlyRootFilesystem: true
-            runAsNonRoot: false
-            capabilities: {}
+            runAsNonRoot: true
+            runAsUser: 1000
+            capabilities:
+              drop:
+                - ALL
           resources:
             limits:
               cpu: 100m # TODO: Set this to the maximum amount of CPU you want your workload to use
+              memory: 256Mi
             requests:
               cpu: 100m # TODO: Set this to the amount of CPU you want to reserve for your workload
+              memory: 128Mi
