@@ -3,7 +3,3 @@ manifests:
     - ./passing.yaml
     - ./failing.yaml
     - ./failing_opa.yaml
-
-reports:
-  trivy:
-    enabled: false
