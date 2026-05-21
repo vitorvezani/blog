@@ -24,7 +24,9 @@ spec:
             privileged: false
             readOnlyRootFilesystem: true
             runAsNonRoot: false
-            capabilities: {}
+            capabilities:
+              drop:
+                - ALL
           resources:
             limits:
               cpu: 100m # TODO: Set this to the maximum amount of CPU you want your workload to use
@@ -57,7 +59,9 @@ spec:
             privileged: false
             readOnlyRootFilesystem: true
             runAsNonRoot: false
-            capabilities: {}
+            capabilities:
+              drop:
+                - ALL
           resources:
             limits:
               cpu: 100m # TODO: Set this to the maximum amount of CPU you want your workload to use
