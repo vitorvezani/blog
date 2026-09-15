@@ -28,8 +28,10 @@ spec:
           resources:
             limits:
               cpu: 100m # TODO: Set this to the maximum amount of CPU you want your workload to use
+              memory: 128Mi # TODO: Set this to the maximum amount of memory you want your workload to use
             requests:
               cpu: 100m # TODO: Set this to the amount of CPU you want to reserve for your workload
+              memory: 64Mi # TODO: Set this to the amount of memory you want to reserve for your workload
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -61,5 +63,7 @@ spec:
           resources:
             limits:
               cpu: 100m # TODO: Set this to the maximum amount of CPU you want your workload to use
+              memory: 128Mi # TODO: Set this to the maximum amount of memory you want your workload to use
             requests:
               cpu: 100m # TODO: Set this to the amount of CPU you want to reserve for your workload
+              memory: 64Mi # TODO: Set this to the amount of memory you want to reserve for your workload
